@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <math.h>
+#include <conio.h>
 using namespace std;
 
 typedef struct
@@ -25,7 +26,7 @@ ostream &operator<< (ostream& os, PS p)
 	return os;
 }
 
-istream &operator<< (istream& is, PS p)
+istream &operator>> (istream& is, PS &p)
 {
 	is >> p.a >> p.b;
 	return is;
@@ -88,5 +89,14 @@ PS operator/(PS p1, PS p2)
 
 int main()
 {
-	PS
+	PS s, p, q, z, u, v;
+	
+	cout << "Nhap cac tham so: ";
+	cin >> p >> q >> z >> u >> v; // luc nhap thi nhap a, space ,b ==> a/b
+	
+	s = (p - q * z) / (u + v);
+	
+	cout << "Ket qua: " << s;
+	
+	return 0;
 }
